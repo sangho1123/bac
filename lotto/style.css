@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f7f7f7;
+}
+
+h1 {
+    color: #333;
+}
+
+.lotto-ticket {
+    display: inline-block;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.number-grid {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.number-grid button {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    background-color: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.number-grid button.selected {
+    background-color: #4caf50;
+    color: white;
+}
+
+.number-grid button:disabled {
+    background-color: #bbb;
+    cursor: not-allowed;
+}
+
+#checkButton {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#checkButton:hover {
+    background-color: #555;
+}
+
+#generatedLottoNumbers, #result {
+    margin-top: 20px;
+    font-size: 18px;
+}

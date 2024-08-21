@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: white;
+    color: rgb(11, 20, 3);
+    margin: 0;
+}
+
+.slot-machine {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.reel-container {
+    width: 100px;
+    height: 120px;  /* 컨테이너 높이를 심볼 크기와 맞춤 */
+    overflow: hidden;
+    border: 2px solid black;
+    margin: 0 10px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;  /* relative 위치 지정 */
+}
+
+.reel {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    animation: spin 1s infinite linear; /* 기본 애니메이션 설정 */
+}
+
+.reel div {
+    font-size: 48px;
+    text-align: center;
+    height: 120px;  /* 심볼 높이를 컨테이너 높이와 동일하게 맞춤 */
+    line-height: 120px;
+}
+@keyframes spin {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-1200px); }  /* 10개의 심볼을 모두 지나갈 정도로 이동 */
+}
+@keyframes flash {
+    0%, 100% { color: white; }
+    50% { color: gold; }
+}
+
+@keyframes zoom {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+    100% { transform: scale(1); }
+}
+
+.success-animation {
+    animation: flash 1s infinite, zoom 0.5s 2; /* 텍스트 깜빡임과 줌 애니메이션 */
+    font-size: 36px;
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+}
